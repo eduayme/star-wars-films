@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "Star jedi", arial;
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/718469/Starjedi.ttf);
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: "Star jedi", arial;
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0
+}
