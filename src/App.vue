@@ -6,8 +6,16 @@
       <Card
         v-for="(film, index) in films"
         :key="film.episode_id"
-        :data="film"
-        :image-id="index+1"
+        :image-id="index + 1"
+        :title="film?.title"
+        :director="film?.director"
+        :releaseDate="film?.release_date"
+        :openingCrawl="film?.opening_crawl"
+        :totalCharacters="film?.characters?.length"
+        :totalPlanets="film?.planets?.length"
+        :totalStarships="film?.starships?.length"
+        :totalVehicles="film?.vehicles?.length"
+        :totalSpecies="film?.species?.length"
       />
     </div>
     <Footer />

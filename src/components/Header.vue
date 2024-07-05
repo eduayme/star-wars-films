@@ -106,6 +106,7 @@
     position: sticky;
     top: 0;
 }
+
 .nav-content svg {
     height: 80px;
     width: 200px;

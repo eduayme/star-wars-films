@@ -1,33 +1,33 @@
 <template>
     <div class="card">
-        <img :src="getPosterUrl" />
+        <img v-if="imageId" :src="getPosterUrl" />
         <div class="card-header">
-            <h3>{{ data.title }}</h3>
+            <h3>{{ title }}</h3>
             <div class="card-subheader">
-                <h5>Directed by {{ data.director }}</h5>
-                <h5>{{ data.release_date.split("-")[0] }}</h5>
+                <h5>Directed by {{ director }}</h5>
+                <h5>{{ releaseDate?.split("-")[0] }}</h5>
             </div>
-            <p>{{ data.opening_crawl }}</p>
+            <p>{{ openingCrawl }}</p>
             <div class="card-details">
                 <div class="card-info">
                     <h5>Characters</h5>
-                    <h4>{{ data.characters.length }}</h4>
+                    <h4>{{ totalCharacters }}</h4>
                 </div>
                 <div class="card-info">
                     <h5>Planets</h5>
-                    <h4>{{ data.planets.length }}</h4>
+                    <h4>{{ totalPlanets }}</h4>
                 </div>
                 <div class="card-info">
                     <h5>Starships</h5>
-                    <h4>{{ data.starships.length }}</h4>
+                    <h4>{{ totalStarships }}</h4>
                 </div>
                 <div class="card-info">
                     <h5>Vehicles</h5>
-                    <h4>{{ data.vehicles.length }}</h4>
+                    <h4>{{ totalVehicles }}</h4>
                 </div>
                 <div class="card-info">
                     <h5>Species</h5>
-                    <h4>{{ data.species.length }}</h4>
+                    <h4>{{ totalSpecies }}</h4>
                 </div>
             </div>
         </div>
@@ -38,16 +38,46 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  data: {
-    type: Object,
-    required: true,
-    default: () => {}
-  },
-  imageId: {
-    type: String,
-    required: true,
-    default: ""
-  }
+    imageId: {
+        type: [Number, String],
+        required: true
+    },
+    title: {
+        type: String,
+        required: true
+    },
+    director: {
+        type: String,
+        required: true
+    },
+    releaseDate: {
+        type: [Date, String],
+        required: true
+    },
+    openingCrawl: {
+        type: String,
+        required: true
+    },
+    totalCharacters: {
+        type: Number,
+        required: true
+    },
+    totalPlanets: {
+        type: Number,
+        required: true
+    },
+    totalStarships: {
+        type: Number,
+        required: true
+    },
+    totalVehicles: {
+        type: Number,
+        required: true
+    },
+    totalSpecies: {
+        type: Number,
+        required: true
+    },
 })
 
 const getPosterUrl = computed(() => {
@@ -100,10 +130,10 @@ p {
 }
 
 .card-details {
-    margin-top: 16px;
+    margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 8px;
+    gap: 12px;
 }
 .card-info {
     display: flex;

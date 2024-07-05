@@ -6,7 +6,6 @@
 </template>
 
 <style scoped>
-
 .loader-container {
     height: calc(100vh - 180px);
     display: flex;
@@ -16,6 +15,7 @@
     align-items: center;
     gap: 20px;
 }
+
 .loader {
   width: 48px;
   height: 48px;
@@ -27,6 +27,7 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
+
 .loader::after {
   content: '';
   box-sizing: border-box;
@@ -62,5 +63,4 @@
     transform: rotate(-360deg);
   }
 }
-
 </style>
